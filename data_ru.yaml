@@ -155,6 +155,6 @@ names:
   - '7_14'
   - Фотовидеофиксация
 ncc: 155
-test: /Users/alex/cv_kursach/rtsd-dataset/test
-train: /Users/alex/cv_kursach/rtsd-dataset/train
-val: /Users/alex/cv_kursach/rtsd-dataset/valid
+test: ./rtsd-dataset/test
+train: ./rtsd-dataset/train
+val: ./rtsd-dataset/valid
