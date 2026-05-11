@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import cv2 as cv
 import os
 
-model = YOLO('yolo26n_rtsd_35.pt')
+model = YOLO('runs/detect/road_signs_yolo26l_1280_b12-28/weights/best.pt')
 
 filename = 'NO20260420-073101-003926F.MP4'
 cap = cv.VideoCapture(f'/Users/alex/dashcam_videos/{filename}')
@@ -38,9 +38,9 @@ while True:
         cv.imshow('YOLO Detection', annotated_frame)
         annotated_frame = cv.resize(annotated_frame, (1600, 900))
         
-        os.makedirs(f'./detection_images/YOLO26n/{filename}_frames', exist_ok=True)
+        os.makedirs(f'./detection_images/YOLO26n1024/{filename}_frames', exist_ok=True)
         
-        save_path = f'./detection_images/YOLO26n/{filename}_frames/{filename}_frame_{frame_count}.jpg'
+        save_path = f'./detection_images/YOLO26n1024/{filename}_frames/{filename}_frame_{frame_count}.jpg'
 
         if not os.path.isfile(save_path) and results[0].boxes and results[0].boxes != prev_boxes:
             cv.imwrite(save_path, annotated_frame)
